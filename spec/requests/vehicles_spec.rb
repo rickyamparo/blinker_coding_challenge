@@ -25,6 +25,10 @@ RSpec.describe "Vehicles API", type: :request do
         expect(json).not_to be_empty
         expect(json['id']).to eq(vehicle_id)
       end
+
+      it "returns status code 200" do
+        expect(response).to have_http_status(200)
+      end
     end
   end
 end
