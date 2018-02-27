@@ -3,8 +3,8 @@ require 'rails_helper'
 RSpec.describe "Vehicles API", type: :request do
   let!(:vehicles) {create_list(:vehicle, 10)}
 
-  describe 'GET /vehicles' do
-    before { get '/vehicles' }
+  describe 'GET /api/v1/vehicles' do
+    before { get '/api/v1/vehicles' }
 
     it 'returns list of vehicles' do
       expect(json).not_to be_empty
