@@ -18,7 +18,7 @@ RSpec.describe "Vehicles API", type: :request do
   end
 
   describe 'GET /api/v1/vehicles' do
-    before { get "/api/v1/vehicle/#{vehicle_id}" }
+    before { get "/api/v1/vehicles/#{vehicle_id}" }
 
     context 'when the record exists' do
       it 'returns the vehicle' do
