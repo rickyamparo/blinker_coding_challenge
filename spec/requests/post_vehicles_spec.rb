@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Vehicles post API', type: :request do
+RSpec.describe 'Vehicles POST API', type: :request do
 
   describe "POST /api/v1/vehicles" do
     let(:valid_vehicle_attributes) { { make: 'subaru',
