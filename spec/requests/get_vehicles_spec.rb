@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Vehicles API', type: :request do
+RSpec.describe 'Vehicles GET API', type: :request do
   let!(:vehicles) {create_list(:vehicle, 10)}
   let(:vehicle_id) { vehicles.first.id }
 
