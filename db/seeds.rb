@@ -33,3 +33,5 @@ vehicles.each do |vehicle|
     VehiclesOption.create(vehicle_id: vehicle.id, option_id: option.id)
   end
 end
+
+puts "Finished creating associations"
