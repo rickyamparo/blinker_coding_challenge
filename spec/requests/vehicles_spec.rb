@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "Vehicles API", type: :request do
+RSpec.describe 'Vehicles API', type: :request do
   let!(:vehicles) {create_list(:vehicle, 10)}
   let(:vehicle_id) { vehicles.first.id }
 
@@ -32,7 +32,7 @@ RSpec.describe "Vehicles API", type: :request do
     end
 
     context 'when the record does not exist' do
-      before { get "/api/v1/vehicles/0" }
+      before { get '/api/v1/vehicles/0' }
 
       it "returns status code 404" do
         expect(response).to have_http_status(404)
@@ -40,6 +40,23 @@ RSpec.describe "Vehicles API", type: :request do
 
       it "returns a not found message" do
         expect(response.body).to match(/Couldn't find Vehicle/)
+      end
+    end
+  end
+
+  describe "POST /api/v1/vehicles" do
+    let(:valid_vehicle_attributes) { { make: 'subaru',
+                                       model: '4-door',
+                                       options: ['cup holders', 'air conditioner' ]
+                                   } }
+    context 'when the record is valid' do
+      before { post '/api/v1/vehicles', params: valid_vehicle_attributes}
+
+      it "creates a vehicle" do
+        expect(json['make']).to eq('subaru')
+        expect(json['model']).to eq('4-door')
+        expect(json['options'].class).to eq(Array)
+        expect(json['options'].count).to eq(2)
       end
     end
   end
