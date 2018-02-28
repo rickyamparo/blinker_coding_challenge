@@ -1,8 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe 'Vehicles post API', type: :request do
-  let!(:vehicles) {create_list(:vehicle, 10)}
-  let(:vehicle_id) { vehicles.first.id }
 
   describe "POST /api/v1/vehicles" do
     let(:valid_vehicle_attributes) { { make: 'subaru',
