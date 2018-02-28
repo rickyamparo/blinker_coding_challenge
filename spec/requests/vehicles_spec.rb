@@ -47,7 +47,7 @@ RSpec.describe 'Vehicles API', type: :request do
   describe "POST /api/v1/vehicles" do
     let(:valid_vehicle_attributes) { { make: 'subaru',
                                        model: '4-door',
-                                       options: ['cup holders', 'air conditioner' ]
+                                       options: ['cup holders', 'air conditioner']
                                    } }
     context 'when the record is valid' do
       before { post '/api/v1/vehicles', params: valid_vehicle_attributes}
@@ -55,8 +55,7 @@ RSpec.describe 'Vehicles API', type: :request do
       it "creates a vehicle" do
         expect(json['make']).to eq('subaru')
         expect(json['model']).to eq('4-door')
-        expect(json['options'].class).to eq(Array)
-        expect(json['options'].count).to eq(2)
+        expect(json['options']).to eq(['cup holders', 'air conditioner'])
       end
     end
   end
