@@ -1,0 +1,3 @@
+class VehiclesOptions < ApplicationRecord
+  
+end
