@@ -8,7 +8,9 @@ class Api::V1::VehiclesController < ApplicationController
   end
 
   def create
-    @vehicle = Vehicle.create(vehicle_params)
+    @vehicle = Vehicle.new(vehicle_params)
+    @vehicle.options = (params[:options].split(','))
+    @vehicle.save
     json_response(@vehicle, :created)
   end
 end
