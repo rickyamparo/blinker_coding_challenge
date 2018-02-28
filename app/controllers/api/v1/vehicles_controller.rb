@@ -25,6 +25,12 @@ class Api::V1::VehiclesController < ApplicationController
     @vehicle.save!
     head :no_content
   end
+
+  def destroy
+    @vehicle = Vehicle.find(params[:id])
+    @vehicle.destroy
+    head :no_content
+  end
 end
 
 
