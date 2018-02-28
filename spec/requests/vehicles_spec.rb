@@ -57,6 +57,10 @@ RSpec.describe 'Vehicles API', type: :request do
         expect(json['model']).to eq('4-door')
         expect(json['options']).to eq(['cup holders', 'air conditioning'])
       end
+
+      it "returns status code 201" do
+        expect(response).to have_http_status(201)
+      end
     end
   end
 end
