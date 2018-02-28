@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 20180227202607) do
   create_table "vehicles", force: :cascade do |t|
     t.string "make"
     t.string "model"
-    t.string "options", default: [], array: true
+    t.text "options", default: [], array: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

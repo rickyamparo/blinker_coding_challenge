@@ -3,7 +3,7 @@ class CreateVehicles < ActiveRecord::Migration[5.1]
     create_table :vehicles do |t|
       t.string :make
       t.string :model
-      t.string :options, array: true, default: []
+      t.text   :options, array: true, default: []
 
       t.timestamps
     end
