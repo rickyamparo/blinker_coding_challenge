@@ -39,7 +39,7 @@ To run the test suite: while in the project directory, enter `rspec`.
 SimpleCov Coverage [Report](https://htmlpreview.github.io/?https://github.com/rickyamparo/blinker_coding_challenge/blob/master/coverage/index.html#_AllFiles)
 
 ### Production
-[Heroku App](https://vast-wildwood-58678.herokuapp.com/)
+[Heroku App](https://blinker-coding-challenge.herokuapp.com/)
 
 ### API Endpoints
 
