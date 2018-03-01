@@ -4,8 +4,7 @@ RSpec.describe 'Vehicles POST API', type: :request do
 
   describe "POST /api/v1/vehicles" do
     let(:valid_vehicle_attributes) { { make: 'subaru',
-                                       model: '4-door',
-                                       options: 'cup holders,air conditioning'
+                                       model: '4-door'
                                    } }
     context 'when the record is valid' do
       before { post '/api/v1/vehicles', params: valid_vehicle_attributes}
@@ -13,7 +12,6 @@ RSpec.describe 'Vehicles POST API', type: :request do
       it "creates a vehicle" do
         expect(json['make']).to eq('subaru')
         expect(json['model']).to eq('4-door')
-        expect(json['options']).to eq(['cup holders', 'air conditioning'])
       end
 
       it "returns status code 201" do
