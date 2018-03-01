@@ -34,17 +34,5 @@ RSpec.describe 'Vehicles PUT API', type: :request do
       end
     end
 
-    # context "when the attributes are invalid" do
-    #   before  { put "/api/v1/vehicles/#{vehicle_id}", params: {identification: '12345'} }
-    #
-    #   it 'returns status code 422' do
-    #     expect(response).to have_http_status(422)
-    #   end
-    #
-    #   it 'returns an invalid record message' do
-    #     expect(response.body).to match(/Validation failed:/)
-    #   end
-    # end
-
   end
 end
