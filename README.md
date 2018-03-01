@@ -11,16 +11,17 @@ Please document your endpoints fully.
 
 ### Technologies used
 Framework - Ruby on Rails
-* Rails 5.1.4 [link to docs](http://rubyonrails.org/)
-* ruby 2.3.1 [link to docs](https://www.ruby-lang.org/en/)
+* Rails 5.1.4 [docs](http://rubyonrails.org/)
+* ruby 2.3.1 [docs](https://www.ruby-lang.org/en/)
+* PostgreSQL 9.6.4 [docs](https://www.postgresql.org/docs/9.6/static/index.html)
 
 Gems
- * pry [link to docs](https://rubygems.org/gems/pry)
- * rspec-rails [link to docs](https://rubygems.org/gems/rspec-rails)
- * simplecov [link to docs](https://rubygems.org/gems/simplecov)
- * factory_bot_rails [link to docs](https://rubygems.org/gems/factory_bot_rails)
- * shoulda-matchers [link to docs](https://rubygems.org/gems/shoulda-matchers)
- * database_cleaner [link to docs](https://rubygems.org/gems/database_cleaner)
+ * pry [docs](https://rubygems.org/gems/pry)
+ * rspec-rails [docs](https://rubygems.org/gems/rspec-rails)
+ * simplecov [docs](https://rubygems.org/gems/simplecov)
+ * factory_bot_rails [docs](https://rubygems.org/gems/factory_bot_rails)
+ * shoulda-matchers [docs](https://rubygems.org/gems/shoulda-matchers)
+ * database_cleaner [docs](https://rubygems.org/gems/database_cleaner)
 
 
 ### Setup Instructions
@@ -30,6 +31,12 @@ Gems
 
 To start your server, run `rails server` in your command line.
 
+### Test Suite
+The test suite was built through a combination of RSpec, Shoula-Matchers, Factory Bot Rails, and Database Cleaner.
+
+To run the test suite: while in the project directory, enter `rspec`.
+
+SimpleCov Coverage [Report](https://htmlpreview.github.io/?https://github.com/rickyamparo/blinker_coding_challenge/blob/master/coverage/index.html#_AllFiles)
 
 ### Production
 [Heroku App](https://vast-wildwood-58678.herokuapp.com/)
@@ -38,7 +45,11 @@ To start your server, run `rails server` in your command line.
 
 You can visit any of the routes in our application and view them from your browser by navigating to the heroku hosted app, or localhost:3000 if using `rails server`. To view the JSON in a human readable way, it is recommended that you download a Google chrome plugin, or alternatively, view the JSON endpoints in Firefox, which makes JSON human readable by default.
 
-A full listing of the routes in our application can be found below:
+
+A full listing of the routes in our application can be found below.
+
+For a detailed explanation of each endpoint visit the heroku app's home page for more information.
+
 
 <table>
   <tr>
@@ -121,20 +132,18 @@ A full listing of the routes in our application can be found below:
 </table>
 
 
-* Ruby version
+### Notes
 
-* System dependencies
+I initially started working on this project with only one table in my database. I decided to try something new in how I approached the `options` attribute of the vehicle model. I ended up setting that field as a PostgreSQL [Array](https://www.postgresql.org/docs/9.6/static/functions-array.html) datatype. It was definitely an interesting learning experience as I have never used arrays in databases before. While I was able to get it working, I did notice a few pain areas that muddled my code.
 
-* Configuration
+The first was the fact that I couldn't include the options in my strong params. Since params are sent in text format, I couldn't use strong params while simultaneously massaging the options params into an array.
 
-* Database creation
+Secondly, it made my controller actions a bit to large since I had to create a nil guard for when there were no options params.
 
-* Database initialization
+Finally it made it difficult to actually interact with a vehicle record's options value.
 
-* How to run the test suite
+I decided to refactor my database and follow a more conventional approach, which was to create a many-to-many relationship between options and vehicles. VehiclesOption represent the association between vehicles and options, and is the model for the joins records.
 
-* Services (job queues, cache servers, search engines, etc.)
+I wanted to use faker, however the faker car information was sorely lacking. You could only use it to create Vehicle Identification Numbers and Manufacturers. It is one of my goals to submit a PR to faker to expand their vehicle information with make, model and options.
 
-* Deployment instructions
-
-* ...
+In the end I created constants with set car information. 
