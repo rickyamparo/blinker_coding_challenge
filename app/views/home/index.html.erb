@@ -13,11 +13,11 @@
 
         <li><code>GET /api/v1/vehicles/:id</code> - returns the vehicle object with the specific <code>:id</code> you've passed in or 404 if the vehicle is not found</li>
 
-        <li><code>POST /api/v1/vehicles</code> - creates a new vehicle with the parameters: <br><code>{ make: "#{vehicle_make}", model: "{vehicle_model}"} }</code><br> If vehicle is successfully created, the vehicle object will be returned. If the vehicle is not successfully created, a 400 status code will be returned. </li>
+        <li><code>POST /api/v1/vehicles</code> - creates a new vehicle with the parameters: <br><code>{ make: "vehicle_make", model: "vehicle_model"} }</code><br> If vehicle is successfully created, the vehicle object will be returned. If the vehicle is not successfully created, a 400 status code will be returned. </li>
 
-        <li><code>PUT /api/v1/vehicles/:id</code> - update an existing vehicle with the parameters:<br> <code>{ make: "#{vehicle_make}", model: "{vehicle_model}"}</code><br> If vehicle is successfully updated, a 204 status code will be returned. If the vehicle is not successfully updated, a 400 status code will be returned.</li>
+        <li><code>PUT /api/v1/vehicles/:id</code> - update an existing vehicle with the parameters:<br> <code>{ make: "vehicle_make", model: "vehicle_model"}</code><br> If vehicle is successfully updated, a 204 status code will be returned. If the vehicle is not successfully updated, a 400 status code will be returned.</li>
 
-        <li><code>DELETE /api/v1/vehicles/:id</code> - will delete the vehicle with the id passed in. If vehicle is successfully deleted, a status code of 204 will be returned. If the vehicle can't be found, a 404 will be returned.</li>
+        <li><code>DELETE /api/v1/vehicles/:id</code> - will delete the vehicle with the <code>:id</code> passed in. If vehicle is successfully deleted, a status code of 204 will be returned. If the vehicle can't be found, a 404 will be returned.</li>
       </ul>
     </div>
 
@@ -28,22 +28,20 @@
 
         <li><code>GET /api/v1/options/:id</code> - returns the option object with the specific <code>:id</code> you've passed in or 404 if the option is not found</li>
 
-        <li><code>POST /api/v1/options</code> - creates a new option with the parameters: <br><code>{ name: "#{option_name}"} }</code><br> If option is successfully created, the option object will be returned. If the option is not successfully created, a 400 status code will be returned. </li>
+        <li><code>POST /api/v1/options</code> - creates a new option with the parameters: <br><code>{ name: "option_name"} }</code><br> If option is successfully created, the option object will be returned. If the option is not successfully created, a 400 status code will be returned. </li>
 
-        <li><code>PUT /api/v1/options/:id</code> - update an existing option with the parameters:<br> <code>{ name: "#{option_name}"}</code><br> If option is successfully updated, a 204 status code will be returned. If the option is not successfully updated, a 400 status code will be returned.</li>
+        <li><code>PUT /api/v1/options/:id</code> - update an existing option with the parameters:<br> <code>{ name: "option_name"}</code><br> If option is successfully updated, a 204 status code will be returned. If the option is not successfully updated, a 400 status code will be returned.</li>
 
-        <li><code>DELETE /api/v1/options/:id</code> - will delete the option with the id passed in. If option is successfully deleted, a status code of 204 will be returned. If the option can't be found, a 404 will be returned.</li>
+        <li><code>DELETE /api/v1/options/:id</code> - will delete the option with the <code>:id</code> passed in. If option is successfully deleted, a status code of 204 will be returned. If the option can't be found, a 404 will be returned.</li>
       </ul>
     </div>
 
     <div class="api">
       <p>VehiclesOption Endpoints:</p>
       <ul>
-        <li><code>POST /api/v1/vehicles_options</code> - creates a new vehicles_option with the parameters: <br><code>{ vehicle_id: vehicle.id, option_id: option.id }</code><br> If vehicles_option is successfully created, the vehicles_option object will be returned. If the vehicles_option is not successfully created, a 422 status code will be returned. </li>
+        <li><code>POST /api/v1/vehicles_options</code> - creates a new vehicles_option with the parameters: <br><code>{ vehicle_id: vehicle_id, option_id: option_id }</code><br> If vehicles_option is successfully created, the vehicles_option object will be returned. If the vehicles_option is not successfully created, a 422 status code will be returned. </li>
 
-        <!-- <li><code>PUT /api/v1/vehicles_options/:id</code> - allows one to update an existing vehicles_option with the parameters:<br> <code>{ vehicles_option_id: "vehicles_option_id}</code><br> If option is successfully updated, a 204 status code will be returned. If the option is not successfully updated, a 400 status code will be returned.</li> -->
-
-        <li><code>DELETE /api/v1/vehicles_options/:id</code> - will delete the vehicles_option with the id passed in. If vehicles_option is successfully deleted, a status code of 204 will be returned. If the vehicles_option can't be found, a 404 will be returned.</li>
+        <li><code>DELETE /api/v1/vehicles_options/:id</code> - will delete the vehicles_option with the <code>:id</code> passed in. If vehicles_option is successfully deleted, a status code of 204 will be returned. If the vehicles_option can't be found, a 404 will be returned.</li>
       </ul>
     </div>
   </div>
