@@ -15,10 +15,6 @@ class Api::V1::VehiclesController < ApplicationController
   def update
     @vehicle = Vehicle.find(params[:id])
     @vehicle.update(vehicle_params)
-    if params[:options]
-      @vehicle.update(options: params[:options].split(','))
-    end
-    @vehicle.save!
     head :no_content
   end
 
