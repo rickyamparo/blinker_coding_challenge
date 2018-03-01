@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'Options GET API', type: :request do
-  let!(:options) {create_list(:option, 10)}
+  let!(:options) {create_list(:option, 5)}
   let(:option_id) { options.first.id }
 
   describe 'GET /api/v1/options' do
