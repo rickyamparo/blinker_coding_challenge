@@ -41,14 +41,13 @@ SimpleCov Coverage [Report](https://htmlpreview.github.io/?https://github.com/ri
 ### Production
 [Heroku App](https://blinker-coding-challenge.herokuapp.com/)
 
+The home page contains detailed explanations of the endpoints and their requirements.
+
 ### API Endpoints
 
-You can visit any of the routes in our application and view them from your browser by navigating to the heroku hosted app, or localhost:3000 if using `rails server`. To view the JSON in a human readable way, it is recommended that you download a Google chrome plugin, or alternatively, view the JSON endpoints in Firefox, which makes JSON human readable by default.
-
+You can visit any of the routes in my application and view them from your browser by navigating to the heroku hosted app, or localhost:3000 if using `rails server`. To view the JSON in a human readable way, it is recommended that you download a Google chrome plugin, or alternatively, view the JSON endpoints in Firefox, which makes JSON human readable by default.
 
 A full listing of the routes in our application can be found below.
-
-For a detailed explanation of each endpoint visit the hosted app's [root page]() for more information.
 
 
 <table>
