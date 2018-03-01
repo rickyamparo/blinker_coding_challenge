@@ -1,5 +1,7 @@
 require 'spec_helper'
 require 'database_cleaner'
+require 'simplecov'
+SimpleCov.start
 
 ENV['RAILS_ENV'] ||= 'test'
 require File.expand_path('../../config/environment', __FILE__)
