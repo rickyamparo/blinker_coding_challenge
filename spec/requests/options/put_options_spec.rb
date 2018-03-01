@@ -27,7 +27,7 @@ RSpec.describe 'Options PUT API', type: :request do
       end
 
       it "returns a not found message" do
-        expect(response.body).to match(/Couldn't find Vehicle/)
+        expect(response.body).to match(/Couldn't find Option/)
       end
     end
 
