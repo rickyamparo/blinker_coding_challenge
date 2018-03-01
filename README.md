@@ -48,7 +48,7 @@ You can visit any of the routes in our application and view them from your brows
 
 A full listing of the routes in our application can be found below.
 
-For a detailed explanation of each endpoint visit the heroku app's home page for more information.
+For a detailed explanation of each endpoint visit the hosted app's [root page]() for more information.
 
 
 <table>
@@ -146,4 +146,4 @@ I decided to refactor my database and follow a more conventional approach, which
 
 I wanted to use faker, however the faker car information was sorely lacking. You could only use it to create Vehicle Identification Numbers and Manufacturers. It is one of my goals to submit a PR to faker to expand their vehicle information with make, model and options.
 
-In the end I created constants with set car information. 
+In the end I created constants with set car information.
