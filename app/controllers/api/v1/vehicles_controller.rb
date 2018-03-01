@@ -1,10 +1,12 @@
 class Api::V1::VehiclesController < ApplicationController
+  before_action :set_vehicle, only: [:show, :update, :destroy]
+
   def index
     json_response(Vehicle.all)
   end
 
   def show
-    json_response(Vehicle.find(params[:id]))
+    json_response(@vehicle)
   end
 
   def create
@@ -13,21 +15,23 @@ class Api::V1::VehiclesController < ApplicationController
   end
 
   def update
-    @vehicle = Vehicle.find(params[:id])
     @vehicle.update(vehicle_params)
     head :no_content
   end
 
   def destroy
-    @vehicle = Vehicle.find(params[:id])
     @vehicle.destroy
     head :no_content
   end
-end
 
+  private
 
-private
+  def vehicle_params
+    params.permit(:id, :make, :model)
+  end
 
-def vehicle_params
-  params.permit(:id, :make, :model)
+  def set_vehicle
+    @vehicle = Vehicle.find(params[:id])
+  end
+
 end
