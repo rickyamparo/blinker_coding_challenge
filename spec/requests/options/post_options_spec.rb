@@ -3,8 +3,8 @@ require 'rails_helper'
 RSpec.describe 'Options POST API', type: :request do
 
   describe "POST /api/v1/vehicles" do
-    let(:valid_option_attributes) { { name: 'air conditioning'
-                                   } }
+    let(:valid_option_attributes) { { name: 'air conditioning'} }
+    
     context 'when the record is valid' do
       before { post '/api/v1/options', params: valid_option_attributes}
 
