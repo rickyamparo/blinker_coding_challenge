@@ -19,4 +19,12 @@ RSpec.describe 'Vehicles Options DELETE API', type: :request do
       expect(response).to have_http_status(204)
     end
   end
+
+  describe 'Delete /api/v1/vehicles_options/#{vehicle_option_id}' do
+    before { delete "/api/v1/vehicles_options/0" }
+
+    it 'returns a 204 status code' do
+      expect(response).to have_http_status(404)
+    end
+  end
 end
